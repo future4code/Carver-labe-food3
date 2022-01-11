@@ -8,7 +8,7 @@ export const goToSignUpAddress = (history) => {
     history.push("/address");
 };
 export const goToFeed = (history) => {
-    history.push("/restaurants");
+    history.push("/");
 };
 export const goToRestaurant = (history, id) => {
     history.push(`/restaurants/${id}`);
