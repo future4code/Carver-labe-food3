@@ -19,7 +19,7 @@ const Router = () => {
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/signUp" component={SignUpPage} />
                 <Route exact path="/address" component={SignUpAddressPage} />
-                <Route exact path="/restaurants" component={FeedPage} />
+                <Route exact path="/" component={FeedPage} />
                 <Route exact path="/restaurants/:restaurantId" component={RestaurantPage} />
                 <Route exact path="/cart" component={CartPage} />
                 <Route exact path="/profile" component={ProfilePage} />
