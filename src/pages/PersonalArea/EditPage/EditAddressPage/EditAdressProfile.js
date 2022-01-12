@@ -1,12 +1,15 @@
-import React from 'react';
+import React from 'react'
+import AdressForm from '../../../AdressPage/AdressForm/AdressForm';
+import {ScreenContainer,RetangleContainer} from './styled'
 
-
-const EditAddressPage = () => {
-  return(
-    <div>
-     EditAddressPage(editar endereço/)
-    </div>
-  )
-}
-
-export default EditAddressPage
+export default function EditAddressProfile() {
+ 
+  return (
+    <RetangleContainer>
+    <ScreenContainer>
+          Endereço
+      <AdressForm/>
+      </ScreenContainer>
+      </RetangleContainer>
+  );
+};

@@ -1,19 +1,16 @@
-import { createTheme } from '@mui/material/styles';
-import {primaryColor, secondaryColor, textColor} from './colors';
+import { createMuiTheme } from "@material-ui/core";
 
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: primaryColor,
-            contrastText: "#000000"
-        },
-        secondary: {
-            main: secondaryColor,
-            contrastText: "#000000"
-        },
-        text: {
-            primary: textColor
-        }
-      }
-    })
-export default theme;    
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#E8222E',
+      contrastText: '#000000',
+    },
+    secondary: {
+      main: '#B8B8B8',
+      contrastText: '#000000',
+    },
+  },
+});
+
+export default theme
