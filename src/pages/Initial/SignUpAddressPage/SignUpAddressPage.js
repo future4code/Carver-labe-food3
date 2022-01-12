@@ -1,15 +1,12 @@
-import React from 'react'
-import AdressForm from "../../AdressPage/AdressForm/AdressForm"
-import {ScreenContainer,RetangleContainer} from './styled'
+import React from 'react';
 
-export default function SignUpAdressPage() {
- 
-  return (
-    <RetangleContainer>
-    <ScreenContainer>
-          Endereço
-      <AdressForm/>
-      </ScreenContainer>
-      </RetangleContainer>
-  );
-};
+
+const SignUpAddressPage = () => {
+  return(
+    <div>
+      SignUpPage (preencher nome/email, cpf e senha botao criar)
+    </div>
+  )
+}
+
+export default SignUpAddressPage;;

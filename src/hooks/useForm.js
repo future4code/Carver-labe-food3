@@ -1,22 +1,18 @@
-import  {useState} from 'react';
+import { useState } from "react";
 
-const useForm=(inicalState)=>{
+const useForm = (inicalState) => {
+  const [form, setForm] = useState(inicalState);
 
-    const [form,setForm]= useState(inicalState)
+  const handleInputChange = (e) => {
+    const { value, name } = e.target;
+    setForm({ ...form, [name]: value });
+  };
 
- const handleInputChange= (e)=>{
-     const {value, name}= e.target
-     setForm({...form, [name]:value})
- }
+  const clear = () => {
+    setForm(inicalState);
+  };
 
- const clear = ()=>{
-     setForm(inicalState)
- }
-
- return (
-     [form, handleInputChange, clear]
- )
-
+  return [form, handleInputChange, clear, setForm];
 };
 
-export default useForm
+export default useForm;
