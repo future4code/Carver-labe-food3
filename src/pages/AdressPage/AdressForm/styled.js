@@ -17,3 +17,22 @@ width: 20.5rem;
   border: solid 1px var(--greyish);
 `
 
+export const InputsContainer = styled.div`
+  width: 22.5rem;
+  height: 4.5rem;
+  margin: 5.5rem 0 0;
+  padding: 0 1rem 0.5rem;
+
+`
+export const Input= styled.div`
+width: 16.5rem;
+  height: 1.125rem;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.39px;
+  color: #d0d0d0;
+`

@@ -1,12 +1,12 @@
 import React, {useState} from "react";
-import { GlobalContext } from "./GlobalStateContext";
+import { GlobalContext } from "./GobalStateContext"
 
 export default function GlobalState(props){
-    const [signup, setSignUp] = useState('token')
+    const [cart, setCart] = useState([])
 
 return (
-    <GlobalContext.Provider value={[signup, setSignUp]}>
+    <GlobalContext.Provider value={[cart, setCart]}>
         {props.children}
     </GlobalContext.Provider>
 )
-};
+}
