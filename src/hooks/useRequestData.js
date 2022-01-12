@@ -3,20 +3,19 @@ import axios from 'axios'
 
 const useRequestData = (initialData, url) => {
     const [data, setData] = useState(initialData)
-    
+
     useEffect(() => {
-        axios.get (url, {
+        axios.get(url, {
             headers: {
-                Authorization: localStorage.getItem('token')
+                auth: localStorage.getItem('token')    
             }
         })
             .then((response) => {
-                setData(response.data.restaurant)
-                
+                setData(response.data.restaurants)
+
             })
             .catch((err) => {
-                console.log("erro data ", err)
-                
+                console.log("erroGet ", err)
             })
 
     }, [url])

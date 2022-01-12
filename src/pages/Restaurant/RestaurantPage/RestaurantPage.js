@@ -1,11 +1,16 @@
 import React from 'react';
-
+import {RestaurantsContainer} from './styled'
+import RestaurantCard from './RestaurantCard';
+import MenuCard from './MenuCard';
 
 const RestaurantPage = () => {
   return(
-    <div>
-      RestaurantPage(detalhe do restaurante e adicionar pedido)
-    </div>
+    <RestaurantsContainer>
+      <RestaurantCard/>
+      <MenuCard/>
+
+      
+    </RestaurantsContainer>
   )
 }
 
