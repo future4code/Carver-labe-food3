@@ -10,11 +10,14 @@ import EditAddressPage from '../pages/PersonalArea/EditPage/EditAddressPage/Edit
 import RestaurantPage from '../pages/Restaurant/RestaurantPage/RestaurantPage'
 import CartPage from "../pages/Cart/CartPage/CartPage";
 import ErrorPage from "../pages/Error/ErrorPage";
+import Header from '../components/Header/Header'
+import Footer from '../components/Footer/Footer'
 
 
 const Router = () => {
     return (
         <BrowserRouter>
+        <Header/>
             <Switch>
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/signUp" component={SignUpPage} />
@@ -27,6 +30,7 @@ const Router = () => {
                 <Route exact path="/adress/edit" component={EditAddressPage} />
                 <Route component={ErrorPage}/>
             </Switch>
+            <Footer/>
         </BrowserRouter>
     )
 }
