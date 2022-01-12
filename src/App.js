@@ -12,6 +12,7 @@ export const App = () => {
       <Router/>
       </ThemeProvider>
     </GlobalState>
+
   )
 }
 

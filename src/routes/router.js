@@ -10,8 +10,11 @@ import EditAddressPage from "../pages/PersonalArea/EditPage/EditAddressPage/Edit
 import RestaurantPage from "../pages/Restaurant/RestaurantPage/RestaurantPage";
 import CartPage from "../pages/Cart/CartPage/CartPage";
 import ErrorPage from "../pages/Error/ErrorPage";
+import Header from '../components/Header/Header'
+import Footer from '../components/Footer/Footer'
 
 const Router = () => {
+
   return (
     <BrowserRouter>
       <Switch>
@@ -33,5 +36,6 @@ const Router = () => {
     </BrowserRouter>
   );
 };
+
 
 export default Router;
