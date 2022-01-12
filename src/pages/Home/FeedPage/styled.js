@@ -14,10 +14,13 @@ padding: 0.5rem;
 display: flex;
 justify-content: center;
 align-items: center;
-border: 1px solid gray;
-`
 
+`
 export const TypographyContainer = styled.div`
 display: flex;
 justify-content: space-between;
+`
+export const CardContainer = styled.div`
+margin-top:0.5rem;
+
 `
