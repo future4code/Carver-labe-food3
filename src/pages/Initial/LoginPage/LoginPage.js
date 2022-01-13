@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import { goToRestaurant } from '../../../routes/coordinator' 
+import { goToRestaurant } from '../../../routes/coordinator'
 import { ScreenContainer, LogoImage, InputsContainer } from './styled';
 import logo from '../../../assets/img/logoIcon/logo-future-eats-invert@2x.png'
 import { Button, TextField } from '@mui/material';
