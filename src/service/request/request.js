@@ -25,3 +25,13 @@ export async function getAddress() {
   });
   return response.data.address;
 }
+
+export async function getOrderHistory () {
+
+  const {token}= await getToken();
+  const response = await axios.get(`${BASE_URL}/orders/history`,{
+  headers:{auth:token},
+});
+console.log (response.data);
+ 
+}
