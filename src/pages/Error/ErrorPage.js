@@ -1,11 +1,12 @@
 import React from 'react';
+import { ErrorContainer } from './styled';
 
-
-const ErrorPage = () =>{
+export const ErrorPage = () =>{
   return(
-    <div>
-      Ops, página não encontrada :(
-    </div>
+    <ErrorContainer>
+      Ops!
+      Página não encontrada :(
+    </ErrorContainer>
   )
 }
 
