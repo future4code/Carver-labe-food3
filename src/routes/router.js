@@ -17,7 +17,7 @@ import Footer from '../components/Footer/Footer'
 const Router = () => {
     return (
         <BrowserRouter>
-            <Header/>
+        <Header/>
             <Switch>
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/signUp" component={SignUpPage} />

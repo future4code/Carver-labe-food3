@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import Router from './routes/router'
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const MainContainer = styled.div`
   width: 22.5rem;
@@ -17,9 +17,9 @@ const MainContainer = styled.div`
 export const App = () => {
   
    return(
-    <div>
+    <MainContainer>
       <Router/>
-    </div>
+    </MainContainer>
   )
 }
 
