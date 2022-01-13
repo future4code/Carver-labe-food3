@@ -4,7 +4,7 @@ export const goToLogin = (history) => {
 export const goToSignUp = (history) => {
     history.push("/signUp");
 };
-export const goToSignUpAddress = (history) => {
+export const goToCreateAddress = (history) => {
     history.push("/address");
 };
 export const goToFeed = (history) => {

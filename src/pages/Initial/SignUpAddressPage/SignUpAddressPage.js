@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-const SignUpAdressPage = () => {
+const SignUpAddressPage = () => {
   return(
     <div>
-      SignUpAdressPage(inserir endereço após cadastro)
+      SignUpPage (preencher nome/email, cpf e senha botao criar)
     </div>
   )
 }
 
-export default SignUpAdressPage;
+export default SignUpAddressPage;;

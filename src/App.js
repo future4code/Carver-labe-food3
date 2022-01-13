@@ -3,6 +3,7 @@ import Router from './routes/router'
 import { ThemeProvider } from '@mui/material';
 import theme from './constants/theme';
 import styled from 'styled-components';
+import GlobalState from './context/GlobalContext/GlobalState';
 
 const MainContainer = styled.div`
   width: 22.5rem;
@@ -21,11 +22,13 @@ const MainContainer = styled.div`
 export const App = () => {
   
    return(
-     <ThemeProvider theme={theme}>
-    <MainContainer>
+
+    <GlobalState>
+      <ThemeProvider theme={theme}>
       <Router/>
-    </MainContainer>
-    </ThemeProvider>
+      </ThemeProvider>
+    </GlobalState>
+
   )
 }
 
