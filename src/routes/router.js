@@ -11,6 +11,7 @@ import CartPage from "../pages/Cart/CartPage/CartPage";
 import ErrorPage from "../pages/Error/ErrorPage";
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
+import OrderHistory from '../pages/PersonalArea/OrderHistory/OrderHistory'
 
 const Router = () => {
 
@@ -20,16 +21,13 @@ const Router = () => {
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/signUp" component={SignUpPage} />
         <Route exact path="/" component={FeedPage} />
-        <Route
-          exact
-          path="/restaurants/:restaurantId"
-          component={RestaurantPage}
-        />
+        <Route exact path="/restaurants/:restaurantId" component={RestaurantPage}/>
         <Route exact path="/cart" component={CartPage} />
         <Route exact path="/profile" component={ProfilePage} />
         <Route exact path="/profile/edit" component={EditProfilePage} />
         <Route exact path="/address" component={AddressPage} />
         <Route exact path="/address/edit" component={AddressPage} />
+        <Route exact path="/orders/history" component={OrderHistory} />
         <Route component={ErrorPage} />
       </Switch>
     </BrowserRouter>
