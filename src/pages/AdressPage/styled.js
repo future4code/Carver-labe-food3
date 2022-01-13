@@ -36,3 +36,4 @@ width: 16.5rem;
   letter-spacing: -0.39px;
   color: #d0d0d0;
 `
+

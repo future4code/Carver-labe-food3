@@ -1,8 +1,8 @@
 import React from 'react'
-import AdressForm from '../../../AdressPage/AdressForm/AdressForm';
-import {ScreenContainer,RetangleContainer} from './styled'
+import AdressForm from "../AdressForm/AdressForm";
+import {ScreenContainer,RetangleContainer} from '../styled'
 
-export default function EditAddressProfile() {
+export default function AddressPage() {
  
   return (
     <RetangleContainer>
