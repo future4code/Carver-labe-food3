@@ -1,7 +1,7 @@
 import { Button, TextField, CircularProgress } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import useForm from "../../../hooks/useForm";
-import { InputsContainer } from "./styled";
+import { InputsContainer } from '../styled';
 import { putAddress, getAddress } from "../../../service/request/request";
 import { useLocation } from "react-router-dom";
 
@@ -43,7 +43,7 @@ export default function AdressForm() {
   }
 
   useEffect(() => {
-    if (location.pathname === "/adress/edit") {
+    if (location.pathname === "/address/edit") {
       setIsEditing(true);
       getAddress()
         .then((response) => {
