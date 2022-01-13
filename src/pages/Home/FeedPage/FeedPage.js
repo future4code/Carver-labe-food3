@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import FeedCard from './FeedCard';
-import { FeedContainer } from './styled'
+import { FeedContainer,SearchContainer } from './styled'
 import useRequestData from '../../../hooks/useRequestData'
 import { BASE_URL } from '../../../constants/urls'
 import useProctedPage from '../../../hooks/useProtectedPage'
-import { SearchContainer } from './styled'
 import TextField from '@mui/material/TextField';
 import searchIcon from '../../../assets/img/searchIcon/search.png'
+import Category from './Category';
 
 
 export const FeedPage = () => {
@@ -15,7 +15,7 @@ export const FeedPage = () => {
   const restaurants = useRequestData([], `${BASE_URL}/restaurants`)
   const [searchName, setSearchName] = useState("")
 
-  const restaurantsList = restaurants
+  const restaurantsList = restaurants && restaurants
     .filter((restaurant) => {
       return restaurant.name.toLowerCase().includes(searchName)
     })
@@ -35,14 +35,20 @@ export const FeedPage = () => {
   }
 
   return (
-    <FeedContainer>
+    
+    <FeedContainer >
       <SearchContainer>
       <img alt="imagem de lupa de busca" src={searchIcon} />
       <TextField id="outlined-basic" label="Pesquisar" variant="outlined" size='small' fullWidth
       value={searchName} onChange={handleSearch} />
     </SearchContainer>
-      {restaurantsList}
+    
+    {/* <Category/> */}
+    {restaurantsList}
+      
+      
     </FeedContainer>
+    
   )
 }
 export default FeedPage;

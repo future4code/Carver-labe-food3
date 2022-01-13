@@ -7,7 +7,6 @@ min-height: 100%;
 margin: 0 auto;
 padding: 0 0.5rem;
 box-sizing: border-box;
-overflow: auto;
 `
 export const SearchContainer = styled.div`
 padding: 0.5rem;
@@ -23,4 +22,15 @@ justify-content: space-between;
 export const CardContainer = styled.div`
 margin-top:0.5rem;
 
+
 `
+export const Button = styled.button`
+border: none;
+text-decoration: none;
+background-color: transparent;
+cursor: pointer;
+font-size: 1rem;
+`
+
+
+
