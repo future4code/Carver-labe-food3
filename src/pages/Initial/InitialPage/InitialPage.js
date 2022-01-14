@@ -8,10 +8,9 @@ import {InitialContainer} from './styled'
 const InitialPage = () => {
   return (
     <InitialContainer>
- <LogoContainer>
+      <LogoContainer>
         <img src={LOGO} />
       </LogoContainer>
-
     </InitialContainer>
   )
 }

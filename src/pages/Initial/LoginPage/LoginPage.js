@@ -8,8 +8,6 @@ import { goToSignUp } from '../../../routes/coordinator'
 import useUnprotectedPage from '../../../hooks/useUnprotectedPage'
 
 
-
-
 const LoginPage = () =>{
   useUnprotectedPage()
   const history = useHistory()
@@ -17,7 +15,7 @@ const LoginPage = () =>{
   return(
     <ScreenContainer>
       <LogoImage src={logo}/>
-      <p>Entrar</p>
+      <h3>Entrar</h3>
       <LoginForm/>
       <SignUpButtonContainer>
         <Button
