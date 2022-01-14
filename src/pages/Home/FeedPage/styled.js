@@ -21,9 +21,8 @@ justify-content: space-between;
 `
 export const CardContainer = styled.div`
 margin-top:0.5rem;
-
-
 `
+
 export const Button = styled.button`
 border: none;
 text-decoration: none;

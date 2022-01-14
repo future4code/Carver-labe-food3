@@ -1,13 +1,18 @@
 import React from 'react';
+import { InitialContainer, LogoContainer } from './styled'
+import LOGO from '../../../assets/img/logoIcon/white/logo-future-eats.png'
 import {InitialContainer} from './styled'
   
 
-const InitialPage = () =>{
-  return(
+
+const InitialPage = () => {
+  return (
     <InitialContainer>
-      InitialPage (fundo vermelho e a logo) //utilizada para carregamento inicial
+ <LogoContainer>
+        <img src={LOGO} />
+      </LogoContainer>
+
     </InitialContainer>
   )
 }
-
 export default InitialPage;

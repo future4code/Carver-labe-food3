@@ -20,7 +20,9 @@ align-items: center;
 export const TypographyContainer = styled.div`
 display: flex;
 `
-
+export const MenuContainer=styled.div`
+margin-top: 0.5rem;
+`
 export const Button = styled.button`
  background-color: transparent;
   border: 1px solid black;
@@ -28,4 +30,6 @@ export const Button = styled.button`
   width: 5.6rem;
   border-radius: 0.5rem 0 0.5rem 0;
   cursor: pointer;
+  margin-left:6.3rem;
+  margin-bottom:1000rem ;
 `;

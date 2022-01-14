@@ -1,11 +1,14 @@
 import React from "react";
+import Typography from '@mui/material/Typography';
 import { HeaderContainer } from "./styled";
 
 
-export const Header = () => {
+export const Header = (props) => {
     return (
         <HeaderContainer>
-            <h1>Ifuture</h1>
+            <Typography gutterBottom variant="h6" component="div"
+            >
+                {props.title}</Typography>
         </HeaderContainer>
     )
 }

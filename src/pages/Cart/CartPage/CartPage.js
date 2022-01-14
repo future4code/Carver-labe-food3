@@ -3,6 +3,8 @@ import {useHistory} from 'react-router-dom'
 import {CartItem} from '../../components/CartItem/CartItem'
 import {GlobalState} from '../../context/GlobalContext/GlobalState'
 import useProtectedPage from '../../../hooks/useProtectedPage';
+import Header from '../../../components/Header/Header'
+
 
 
 const CartPage = () =>{
@@ -38,7 +40,10 @@ const CartPage = () =>{
 
   return(
     <div>
+
+      <Header title={'Meu Carrinho'}/>
       
+    
       <p>Endereço de entrega</p>
       <p>{address && address.address.street}, {address && address.address.number} - {address && address.address.neighbourhood}</p>
 
@@ -84,6 +89,7 @@ const CartPage = () =>{
     confirma
     
     </button>
+
 
     </div>
   )

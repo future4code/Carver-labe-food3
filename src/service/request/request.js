@@ -18,6 +18,7 @@ export async function getAddress() {
     headers: {auth:token},
   });
   return response.data.address;
+
 }
 
 export async function getOrderHistory () {
@@ -25,4 +26,5 @@ export async function getOrderHistory () {
   headers:{auth:token},
 });
   console.log (response.data);
+
 }

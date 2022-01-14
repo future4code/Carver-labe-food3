@@ -1,3 +1,6 @@
+
+import React from 'react';
+import Header from '../../../components/Header/Header'
   import React from 'react';
   import Box from '@mui/material/Box';
   import { goToEditAdress,goToEditProfile } from '../../../routes/coordinator';
@@ -27,6 +30,7 @@ import EditIcon from '@mui/icons-material/Edit';
 
     return (
       <Container fixed>
+      <Header title={'Perfil'}/>
         <CardProfile>
             <Box>
           <ProfileBar>

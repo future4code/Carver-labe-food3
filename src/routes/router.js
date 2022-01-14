@@ -9,7 +9,6 @@ import AddressPage from "../pages/AdressPage/AddressPage/AddressPage"
 import RestaurantPage from "../pages/Restaurant/RestaurantPage/RestaurantPage";
 import CartPage from "../pages/Cart/CartPage/CartPage";
 import ErrorPage from "../pages/Error/ErrorPage";
-import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import OrderHistory from '../pages/PersonalArea/OrderHistory/OrderHistory'
 
@@ -17,7 +16,7 @@ const Router = () => {
 
   return (
     <BrowserRouter>
-      <Switch>
+          <Switch>
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/signUp" component={SignUpPage} />
         <Route exact path="/" component={FeedPage} />
@@ -30,6 +29,7 @@ const Router = () => {
         <Route exact path="/orders/history" component={OrderHistory} />
         <Route component={ErrorPage} />
       </Switch>
+      <Footer/>
     </BrowserRouter>
   );
 };
