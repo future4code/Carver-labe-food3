@@ -23,7 +23,7 @@ export const goToEditProfile = (history) => {
     history.push("/profile/edit");
 };
 export const goToEditAdress= (history) => {
-    history.push("/adress/edit");
+    history.push("/address/edit");
 };
 export const goBack = (history) => {
     history.goBack()

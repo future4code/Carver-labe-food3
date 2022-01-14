@@ -1,13 +1,52 @@
-import React from 'react';
+  import React from 'react';
+  import Box from '@mui/material/Box';
+  import { goToEditAdress,goToEditProfile } from '../../../routes/coordinator';
+  import Container from '@mui/material/Container';
+  import { CardProfile,ProfileBar,PathCopy,Title, Rectangle,Histrico,Text } from './styled';
+import { useHistory, useLocation } from 'react-router';
+import EditIcon from '@mui/icons-material/Edit';
+
+  const bull = (
+    <Box
+      component="span"
+      sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+    >
+    </Box>
+  );
 
 
-const ProfilePage = () => {
-  return(
-    <div>
-      ProfilePage (perfil completo-nome email, cpf //podendo editar  ; endereço completo//podendo editar
-      histórico de pedidos  // logout)
-    </div>
-  )
-}
 
-export default ProfilePage;
+  export default function ProfilePage () {
+    const history= useHistory()
+    const location= useLocation()
+    
+
+    
+
+
+
+    return (
+      <Container fixed>
+        <CardProfile>
+            <Box>
+          <ProfileBar>
+            <Title> 
+            Meu perfil
+            </Title>
+            <Rectangle>
+            Cadastro
+            <EditIcon onClick={()=>goToEditProfile(history)}/>
+            </Rectangle>
+            <Rectangle>
+            Endereço
+            <EditIcon onClick={()=>goToEditAdress(history)}/>
+            </Rectangle>
+            <Histrico>Hisórico de pedido</Histrico>
+            <PathCopy>______________________________________________</PathCopy>
+            <Text></Text>
+          </ProfileBar>
+          </Box>
+      </CardProfile>
+      </Container>
+    )
+  };

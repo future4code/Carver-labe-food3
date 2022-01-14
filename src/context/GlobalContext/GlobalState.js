@@ -1,12 +1,3 @@
-import React, {useState} from "react";
-import { GlobalContext } from "./GobalStateContext"
+import React from "react";
 
-export default function GlobalState(props){
-    const [cart, setCart] = useState([])
-
-return (
-    <GlobalContext.Provider value={[cart, setCart]}>
-        {props.children}
-    </GlobalContext.Provider>
-)
-}
+export const ProfileContext = React.createContext()
