@@ -29,7 +29,7 @@ export const Category = () => {
         
     })
     
-                console.log(categoryRestaurant)
+    console.log(categoryRestaurant)
 
     return (
         <Box sx={{ maxWidth: 490, bgcolor: 'background.paper' }}>
