@@ -3,15 +3,17 @@ import { ScreenContainer, LogoImage } from './styled';
 import logo from '../../../assets/img/logoIcon/red/logo-future-eats-invert@2x.png';
 import SignUpForm from './SignUpForm';
 import useUnprotectedPage from '../../../hooks/useUnprotectedPage'
+import Header from '../../../components/Header/Header';
 
 const SignUpPage = () =>{
   useUnprotectedPage()
   return(
-    <ScreenContainer>
+    <div>
+      <Header title={''}/>
       <LogoImage src={logo}/>
-      <p>Cadastrar</p>
+      <h3>Cadastrar</h3>
       <SignUpForm/>
-    </ScreenContainer>
+    </div>
   )
 }
 

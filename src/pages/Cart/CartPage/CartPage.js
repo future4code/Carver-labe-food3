@@ -29,22 +29,22 @@
 //   }
   
 //   let priceToPay = 0
-//   cart.forEach((pedido => {
-//     priceToPay += Number(pedido.price)
-//   })
+//   cart.forEach((prod => {
+//     priceToPay += Number(prod.price) * prod.amount;
+//   }),
 
-//   const cartCards = cart.map((pedido)=>{
-//     return <CartItem key={product.id} product={prod}/>
-
+//   const cartCards = cart.map((prod)=>{
+//     return (
+//         <CartItem key={prod.id} product={prod} removeFromCart={removeFromCart}/>
+//     ) 
 //   })
 
 //   return(
 //     <div>
 
 //       <Header title={'Meu Carrinho'}/>
-      
-    
-//       <p>Endereço de entrega</p>
+          
+//       <h3>Endereço de entrega</h3>
 //       <p>{address && address.address.street}, {address && address.address.number} - {address && address.address.neighbourhood}</p>
 
 //       {cart.length ?
