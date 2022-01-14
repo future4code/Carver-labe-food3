@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import useForm from "../../../hooks/useForm";
 import { InputsContainer } from '../styled';
 import { putAddress, getAddress } from "../../../service/request/request";
-import { useLocation } from "react-router-dom";
+import { useLocation} from "react-router-dom";
+
 
 export default function AdressForm() {
   const [form, onChange, clear, setForm] = useForm({
@@ -16,7 +17,6 @@ export default function AdressForm() {
   });
 
   const location = useLocation();
-
   const [loading, setLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
 
