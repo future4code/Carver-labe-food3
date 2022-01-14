@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from "react";
 import Router from './routes/router'
 import { ThemeProvider } from '@mui/material';
 import theme from './constants/theme';
 import styled from 'styled-components';
-import GlobalState from './context/GlobalContext/GlobalState';
+import { GlobalContext } from '../src/context/GlobalContext/GobalContext'
 
 const MainContainer = styled.div`
   width: 22.5rem;
@@ -21,18 +21,23 @@ const MainContainer = styled.div`
 `
 
 export const App = () => {
-  
-   return(
 
-    <GlobalState>
+  const [profile, setProfile] = useState({});
+
+
+  return (
+    <GlobalContext.Provider value={{ profile, setProfile }}>
       <ThemeProvider theme={theme}>
         <MainContainer>
+        <GGlobalState>
+        
         <Router/>
+        
         </MainContainer>
-            </ThemeProvider>
-    </GlobalState>
-
-  )
-}
+               </GlobalState>
+             </ThemeProvider>
+    </GlobalContext.Provider>
+  );
+};
 
 export default App;
