@@ -6,12 +6,11 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { TypographyContainer, CardContainer } from './styled'
 
-
 export const FeedCard = (props) => {
   return (
     <CardContainer>
       <Card sx={{ maxWidth: 345 }} >
-        <CardActionArea>
+        <CardActionArea onClick={props.onClick}>
           <CardMedia
             component="img" height="100" alt={props.name}
             src={props.src}

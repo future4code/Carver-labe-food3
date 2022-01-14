@@ -7,16 +7,17 @@ import GlobalState from './context/GlobalContext/GlobalState';
 
 const MainContainer = styled.div`
   width: 22.5rem;
-  height: 30rem;
+  height: 35rem;
   position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-  border: 1px solid black;
-  border-radius: 5px;
+  border: 1px solid #B8B8B8;
+  border-radius: 5px ;
   background-color: white;
   box-shadow: 0 0 5px #0000000F;
   overflow: scroll;
+  overflow-x: hidden;
 `
 
 export const App = () => {
@@ -25,8 +26,10 @@ export const App = () => {
 
     <GlobalState>
       <ThemeProvider theme={theme}>
-      <Router/>
-      </ThemeProvider>
+        <MainContainer>
+        <Router/>
+        </MainContainer>
+            </ThemeProvider>
     </GlobalState>
 
   )

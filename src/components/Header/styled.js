@@ -7,6 +7,6 @@ height: 50px;
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	padding: 0 10px;
+	margin-top:0.5rem;
 	flex-shrink: 0;
 `

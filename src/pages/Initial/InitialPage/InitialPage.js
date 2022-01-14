@@ -1,19 +1,14 @@
 import React from 'react';
-import {InitialContainer} from './styled'
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';  
+import { InitialContainer, LogoContainer } from './styled'
+import LOGO from '../../../assets/img/logoIcon/white/logo-future-eats.png'
 
-const InitialPage = () =>{
-  return(
+const InitialPage = () => {
+  return (
     <InitialContainer>
-      InitialPage (fundo vermelho e a logo) //utilizada para carregamento inicial
-      <Stack spacing={2} direction="row">
-      <Button variant="text">Text</Button>
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
-    </Stack>
+      <LogoContainer>
+        <img src={LOGO} />
+      </LogoContainer>
     </InitialContainer>
   )
 }
-
 export default InitialPage;
