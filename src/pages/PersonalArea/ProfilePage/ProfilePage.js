@@ -1,6 +1,6 @@
   import React from 'react';
   import Box from '@mui/material/Box';
-  import { goToEditAdress } from '../../../routes/coordinator';
+  import { goToEditAdress,goToEditProfile } from '../../../routes/coordinator';
   import Container from '@mui/material/Container';
   import { CardProfile,ProfileBar,PathCopy,Title, Rectangle,Histrico,Text } from './styled';
 import { useHistory, useLocation } from 'react-router';
@@ -35,7 +35,7 @@ import EditIcon from '@mui/icons-material/Edit';
             </Title>
             <Rectangle>
             Cadastro
-            <EditIcon onClick={()=>goToEditAdress(history)}/>
+            <EditIcon onClick={()=>goToEditProfile(history)}/>
             </Rectangle>
             <Rectangle>
             Endereço
