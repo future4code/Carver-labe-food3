@@ -32,6 +32,5 @@ export async function getOrderHistory () {
   const response = await axios.get(`${BASE_URL}/orders/history`,{
   headers:{auth:token},
 });
-console.log (response.data);
- 
+  console.log (response.data);
 }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CardActions, Card, AppBar } from "@material-ui/core";
+
 
 export const ContainerVazio = styled.div`
 display: flex;

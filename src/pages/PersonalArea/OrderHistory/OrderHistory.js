@@ -1,7 +1,7 @@
 import React, {useEffect, useState } from 'react';
 import { ContainerVazio, Container,TextContainer } from './styled';
 import { getOrderHistory } from '../../../service/request/request';
-import { CircularProgress } from "@material-ui/core";
+import { CircularProgress } from "@mui/material";
 
 export default function OrderHistory() {
   
