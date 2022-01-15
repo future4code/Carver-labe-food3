@@ -13,6 +13,7 @@ import Header from '../../../components/Header/Header';
 
 export const FeedPage = () => {
   useProctedPage()
+  
   const history = useHistory()
   const [searchName, setSearchName] = useState("")
   const restaurants = useRequestData([], `${BASE_URL}/restaurants`)

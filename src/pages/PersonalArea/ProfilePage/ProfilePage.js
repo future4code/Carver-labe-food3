@@ -1,56 +1,66 @@
 
 import React from 'react';
 import Header from '../../../components/Header/Header'
-  import React from 'react';
-  import Box from '@mui/material/Box';
-  import { goToEditAdress,goToEditProfile } from '../../../routes/coordinator';
-  import Container from '@mui/material/Container';
-  import { CardProfile,ProfileBar,PathCopy,Title, Rectangle,Histrico,Text } from './styled';
+import { goToEditAdress, goToEditProfile } from '../../../routes/coordinator';
+import { ProfileContainer, Button, FlexCard, HistoryCard } from './styled';
 import { useHistory, useLocation } from 'react-router';
-import EditIcon from '@mui/icons-material/Edit';
-
-  const bull = (
-    <Box
-      component="span"
-      sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-    >
-    </Box>
-  );
+import Box from '@mui/material/Box';
+import CardActionArea from '@mui/material/CardActionArea';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import EDIT from '../../../assets/img/editIcon/edit.png'
+import OrderHistory from '../OrderHistory/OrderHistory';
+import useProtectedPage from '../../../hooks/useProtectedPage'
 
 
+export default function ProfilePage() {
+  useProtectedPage()
 
-  export default function ProfilePage () {
-    const history= useHistory()
-    const location= useLocation()
-    
+  const history = useHistory()
+  const location = useLocation()
 
-    
-
-
-
-    return (
-      <Container fixed>
-      <Header title={'Perfil'}/>
-        <CardProfile>
-            <Box>
-          <ProfileBar>
-            <Title> 
-            Meu perfil
-            </Title>
-            <Rectangle>
-            Cadastro
-            <EditIcon onClick={()=>goToEditProfile(history)}/>
-            </Rectangle>
-            <Rectangle>
-            Endereço
-            <EditIcon onClick={()=>goToEditAdress(history)}/>
-            </Rectangle>
-            <Histrico>Hisórico de pedido</Histrico>
-            <PathCopy>______________________________________________</PathCopy>
-            <Text></Text>
-          </ProfileBar>
+  return (
+    <ProfileContainer>
+      <Header title={"Meu Perfil"} />
+      <CardActionArea>
+        <FlexCard>
+          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <CardContent >
+              <Typography variant="subtitle1" fontWeight={'bold'}>
+                Nome   </Typography>
+              <Typography variant="subtitle1" fontWeight={'bold'}>
+                Email   </Typography>
+              <Typography variant="subtitle1" fontWeight={'bold'}>
+                Endereço   </Typography>
+            </CardContent>
           </Box>
-      </CardProfile>
-      </Container>
-    )
-  };
+          <Button onClick={() => goToEditProfile(history)}><img src={EDIT} /></Button>
+        </FlexCard>
+      </CardActionArea>
+      <CardActionArea>
+        <FlexCard>
+          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <CardContent >
+              <Typography variant="subtitle1" color="text.secondary">
+                Endereço cadastrado  </Typography>
+              <Typography variant="subtitle1" fontWeight={'bold'}>
+                Endereço </Typography>
+            </CardContent>
+          </Box>
+          <Button onClick={() => goToEditAdress(history)}><img src={EDIT} /></Button>
+        </FlexCard>
+      </CardActionArea>
+      <FlexCard>
+          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <HistoryCard >
+              <Typography variant="subtitle1" fontWeight={'bold'}>
+                Histórico de Pedidos  </Typography>
+              <OrderHistory/>
+            </HistoryCard>
+          </Box>
+                  </FlexCard>
+
+    </ProfileContainer>
+  )
+};
+

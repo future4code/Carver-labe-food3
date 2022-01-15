@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import { ScreenContainer, LogoImage, SignUpButtonContainer } from './styled';
-import logo from '../../../assets/img/logoIcon/logo-future-eats-invert@2x.png'
+import logo from '../../../assets/img/logoIcon/red/logo-future-eats-invert@2x.png'
 import { Button } from '@mui/material';
 import useForm from '../../../hooks/useForm';
 import LoginForm from './LoginForm';
