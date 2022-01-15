@@ -4,7 +4,8 @@ import { ThemeProvider } from '@mui/material';
 import theme from './constants/theme';
 import styled from 'styled-components';
 import { GlobalContext } from '../src/context/GlobalContext/GobalContext'
-import {ProfileContext} from './context/GlobalContext/GlobalState'
+import {ProfileContext} from '../src/context/GlobalContext/GlobalState'
+
 
 const MainContainer = styled.div`
   width: 22.5rem;
@@ -29,13 +30,13 @@ export const App = () => {
   return (
     <GlobalContext.Provider value={{ profile, setProfile }}>
       <ThemeProvider theme={theme}>
-        
-          <MainContainer>
 
-            <Router />
+        <MainContainer>
+        {/* <ProfileContext> */}
+        <Router/>
+        {/* </ProfileContext> */}
+        </MainContainer>               
 
-          </MainContainer>
-        
       </ThemeProvider>
     </GlobalContext.Provider>
   );

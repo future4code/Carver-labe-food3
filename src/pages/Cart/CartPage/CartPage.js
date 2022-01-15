@@ -1,13 +1,16 @@
 import {React, useContext} from 'react';
-import {useHistory} from 'react-router-dom'
+// import {useHistory} from 'react-router-dom'
+// import {CartItem} from '../../components/CartItem/CartItem'
 // import {GlobalState} from '../../context/GlobalContext/GlobalState'
-import useProtectedPage from '../../../hooks/useProtectedPage';
-import Header from '../../../components/Header/Header'
+// import useProtectedPage from '../../../hooks/useProtectedPage';
+// import Header from '../../../components/Header/Header'
 
 
 
-const CartPage = () =>{
-  useProtectedPage()
+
+// const CartPage = () =>{
+//   useProtectedPage()
+
 
   // const address = useRequestData(`${BASE_URL}/profile/address`)
 
@@ -55,43 +58,9 @@ Carrinho
           {cart.map(product => {
             return <ProductCard product={product} />
           })}
-          
-        </div>
+</div>
+</div>
 
-        : <p>Carrinho Vazio</p>}
+// 
 
-    <h2>Meu Carrinho</h2>
-    <h2>endereço de entrega</h2>
-    
-  
-    <p> Frete R$ {cart.length ? restaurant.shipping : "00"}, 00 </p> 
-    
-        
-    <div>
-
-    <h3>SUBTOTAL: R$ 00,00</h3>
-    <p>R${Valores}, 00 </p>
-    </div>
-   
-
-    <p>forma de pagamento</p>
-
-      <input type= {"radio"} name = {"payment"}/>
-      <label>Dinheiro</label>
-
-      <input type= {"radio"} name = {"payment"}/>
-      <label>Cartão de crédito</label>
-    
-        
-    <button onClick= {()=>(history)}>
-    
-    confirma
-    
-    </button>
- */}
-
-    </div>
-  )
-}
-
-export default CartPage;
+// export default CartPage;
