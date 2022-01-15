@@ -4,7 +4,7 @@ import { ThemeProvider } from '@mui/material';
 import theme from './constants/theme';
 import styled from 'styled-components';
 import { GlobalContext } from '../src/context/GlobalContext/GobalContext'
-import {ProfileContext} from '../src/context/GlobalContext/GlobalState'
+
 
 
 const MainContainer = styled.div`
@@ -24,11 +24,12 @@ const MainContainer = styled.div`
 
 export const App = () => {
 
-  const [profile, setProfile] = useState({});
+  const [cartFood, setCartFood] = useState(undefined);
+  
 
 
   return (
-    <GlobalContext.Provider value={{ profile, setProfile }}>
+    <GlobalContext.Provider value={cartFood, setCartFood}>
       <ThemeProvider theme={theme}>
 
         <MainContainer>

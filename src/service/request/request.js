@@ -27,4 +27,24 @@ export async function getOrderHistory () {
 });
   console.log (response.data);
 
+};
+
+export const getProfile = async () => {
+  const token = localStorage.getItem("token");
+  const response = await axios.get(`${BASE_URL}/profile`, {
+    headers: {
+      auth: token
+    }
+  });
+  return response.data;
+};
+
+export const placeOrder = async (body, restaurantId) => {
+  const token = localStorage.getItem("token");
+  const response = await axios.post(`${BASE_URL}/restaurants/${restaurantId}/order`, body, {
+    headers: {
+      auth: token
+    }
+  });
+  return response.data;
 }

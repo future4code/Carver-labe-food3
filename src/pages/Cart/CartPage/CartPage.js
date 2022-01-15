@@ -1,66 +1,119 @@
-import {React, useContext} from 'react';
-// import {useHistory} from 'react-router-dom'
-// import {CartItem} from '../../components/CartItem/CartItem'
-// import {GlobalState} from '../../context/GlobalContext/GlobalState'
-// import useProtectedPage from '../../../hooks/useProtectedPage';
-// import Header from '../../../components/Header/Header'
+import React, { useState, useEffect, useContext } from 'react';
+import ProductCard from '../../../components/ProductCart/ProductCart'
+import { GlobalContext} from '../../../context/GlobalContext/GobalContext'
+import { getProfile, placeOrder } from '../../../service/request/request'
+import { PageContainer, FormButton } from '../CartPage/styled';
 
+import ShowAddress from '../CartPage/AddressCart/AddressCart'
+import PaymentMethod from '../CartPage/PaymentMethod/PaymentMethod'
+import {
+  CartPageContainer,
+  AddressContainer,
+  RestaurantContainer,
+  OrderContainer,
+  TotalContainer,
+  PaymentContainer
+} from '../CartPage/styled';
+import useProtectedPage from '../../../hooks/useProtectedPage';
+import Loading from '../../../components/Loading/Loading';
 
+const CartPage = () => {
 
+  useProtectedPage()
 
-// const CartPage = () =>{
-//   useProtectedPage()
+  const { cartFood, setCartFood } = useContext(GlobalContext);
 
+  const [shippingAddress, setShippingAddress] = useState(undefined);
 
-  // const address = useRequestData(`${BASE_URL}/profile/address`)
+  const [paymentMethod, setPaymentMethod] = useState('creditcard');
 
-  // const {states, setters} = useContext(GlobalState)
-  // const cart = states.cart
-  // const history = useHistory()
+  const payment = [paymentMethod, setPaymentMethod];
 
-  // const removeFromCart = (itemToRemove) =>{
-  //   const index = cart.findIndex((i) => i.id === itemToRemove.id)
-  //   const newcart = [...cart]
+  useEffect(() => {
+    getShippingAddress()
+  }, [setShippingAddress]);
 
-  //   if(newcart[index].amount === 1) {
-  //     newcart.splice(index, 1)
-  //   } else {
-  //     newCart[index].amaunt -= 1
-  //   }
-  //   setters.setCart(newCart)
-  // }
-  
-  // let priceToPay = 0
-  // cart.forEach((pedido => {
-  //   priceToPay += Number(pedido.price)
-  // })
+  const getShippingAddress = async () => {
+    try {
+      const response = await getProfile();
+      setShippingAddress(response.user.address);
+    } catch (error) {
+      console.error(error.response);
+    }
+  }
 
-  // const cartCards = cart.map((pedido)=>{
-  //   return <CartItem key=(product.id product={prod}/>
+  const getSubtotal = () => {
+    let subtotal = 0;
+    (cartFood ? cartFood.products : []).forEach(product => {
+      subtotal += product.quantity * product.price;
+    })
+    return subtotal
+  }
 
-  // })
+  const subtotal = getSubtotal();
 
-  return(
-    <div>
-Carrinho
-      {/* <Header title={'Meu Carrinho'}/>
-      
-    
-      <p>Endereço de entrega</p>
-      <p>{address && address.address.street}, {address && address.address.number} - {address && address.address.neighbourhood}</p>
+  const removeProduct = (productToRemove) => {
+    const newCart = cartFood.products.filter(product => (
+      product.id !== productToRemove.id
+    ));
+    setCartFood({ ...cartFood, products: newCart });
+  }
 
-      {cart.length ?
-        <div>
-          <h4>{restaurant.name}</h4>
-          <p>{restaurant.address}</p>
-          <p>{restaurant.deliveryTime}</p>
+  const submitOrder = async (event) => {
+    event.preventDefault();
+    const products = (cartFood ? cartFood.products : []).map(product => (
+      { id: product.id, quantity: product.quantity }
+    ));
+    const body = { products, paymentMethod }
+    try {
+      await placeOrder(body, cartFood.id);
+      setCartFood(undefined);
+    } catch (error) {
+      console.error(error.response);
+    }
+  }
 
-          {cart.map(product => {
-            return <ProductCard product={product} />
-          })}
-</div>
-</div>
+  return ( <PageContainer>
 
-// 
+    {shippingAddress ? (
+      <CartPageContainer onSubmit={submitOrder} >
+        <AddressContainer>
+          <ShowAddress address={shippingAddress} />
+        </AddressContainer>
+        <OrderContainer>
+          {(cartFood ? ((cartFood.products || []).length ? (
+            <RestaurantContainer>
+              <p>{cartFood.name}</p>
+              <p>{cartFood.address}</p>
+              <p>{`${cartFood.deliveryTime} min`}</p>
+            </RestaurantContainer>
+          ) : null) : null)}
+          {(cartFood ? cartFood.products : []).length ? cartFood.products.map(product => (
+            <ProductCard key={product.id} product={product} showModal={() => null} remove={removeProduct} />
+          )) : <p>Carrinho vazio</p>}
+          <TotalContainer>
+            <p>SUBTOTAL</p>
+            <div>
+              <p>{`Frete R$${(cartFood ? (cartFood.products.length ? cartFood.shipping.toFixed(2) : '0,00') : '0,00')}`}</p>
+              <p>{`R$${(cartFood? (cartFood.products.length ? (subtotal + cartFood.shipping).toFixed(2) : '00,00') : '00,00')}`}</p>
+            </div>
+          </TotalContainer>
+        </OrderContainer>
+        <PaymentContainer>
+          <PaymentMethod payment={payment} />
+          <FormButton 
+            type='submit'
+            color='primary' 
+            variant='contained' 
+            disabled={(cartFood ? (cartFood.products.length ? false : true) : true)}
+          >
+            Confirmar
+          </FormButton>
+        </PaymentContainer>
+      </CartPageContainer>
+    ) : <Loading/>}
+  </PageContainer>
+)
+}
 
-// export default CartPage;
+export default CartPage;
