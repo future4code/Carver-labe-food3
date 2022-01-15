@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { GlobalContext } from '../src/context/GlobalContext/GobalContext'
 import {ProfileContext} from '../src/context/GlobalContext/GlobalState'
 
+
 const MainContainer = styled.div`
   width: 22.5rem;
   height: 35rem;
@@ -29,11 +30,13 @@ export const App = () => {
   return (
     <GlobalContext.Provider value={{ profile, setProfile }}>
       <ThemeProvider theme={theme}>
+
         <MainContainer>
         {/* <ProfileContext> */}
         <Router/>
         {/* </ProfileContext> */}
         </MainContainer>               
+
       </ThemeProvider>
     </GlobalContext.Provider>
   );

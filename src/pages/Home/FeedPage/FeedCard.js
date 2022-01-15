@@ -5,8 +5,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { TypographyContainer, CardContainer } from './styled'
+import useProtectedPage from '../../../hooks/useProtectedPage'
 
 export const FeedCard = (props) => {
+  useProtectedPage()
   return (
     <CardContainer>
       <Card sx={{ maxWidth: 345 }} >

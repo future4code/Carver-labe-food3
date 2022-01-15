@@ -5,9 +5,8 @@ export const ContainerVazio = styled.div`
 display: flex;
 justify-content: space-around;
 font-size: 1.5em;
-margin-top: 40vh;`
-
-
+margin-top:1rem;
+`
 
 export const Container = styled.div`
  width: 20.5rem;
@@ -16,6 +15,7 @@ export const Container = styled.div`
   padding: 1rem;
   border-radius: 8px;
   border: solid 1px var(--greyish);
+  
 `
 export const TextContainer=styled.div`
 width: 18.5rem;
