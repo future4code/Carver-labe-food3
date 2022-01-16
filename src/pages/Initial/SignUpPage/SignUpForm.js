@@ -88,7 +88,6 @@ const SignUpForm = () =>{
             margin={'dense'}          
           >Criar</Button>
         </form>
-        {/* </Box> */}
         </InputsContainer>
     </div>
   )

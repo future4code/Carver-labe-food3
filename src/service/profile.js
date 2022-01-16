@@ -1,6 +1,6 @@
 import axios from "axios";
 import { BASE_URL } from "../constants/urls";
-import { goToFeed } from "../routes/coordinator";
+import { goToFeed, goToCreateAddress } from "../routes/coordinator";
 
 export const login = (body, clear, history) => {
     axios.post(`${BASE_URL}/login`, body, {
@@ -27,7 +27,7 @@ export const signUp = (body, clear, history) => {
     .then((resp) => {
         localStorage.setItem("token", resp.data.token)
         clear()
-        goToFeed(history)
+        goToCreateAddress(history)
     })
     .catch((err) => {
         alert("Email ou CPF já cadastrados")
