@@ -11,15 +11,17 @@
 - [Luciana Marin](https://github.com/lumarin2802)
 - [Luiza Cioffi](https://github.com/Luizagac)
 
-Link do Surge: 
+Link do Surge: https://irritating-birthday.surge.sh/
 
 ## ⚙️ O que funciona:
-- 
-- 
+- login
+- signUp
+- carrinho
+- lista de restaurantes (com login original de astrodev)
 
 ## ⚙️ O que não funciona
-- 
-- 
+- renderização de detalhes do restaurante
+- detalhes dos produtos
 
 ## ⚙️ Tecnologias Usadas:
 - CSS3
