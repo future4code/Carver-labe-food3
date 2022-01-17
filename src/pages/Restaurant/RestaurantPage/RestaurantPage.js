@@ -29,35 +29,38 @@ const RestaurantPage = () => {
       console.log(err.response.data)
     })
   }
-  // console.log(getRestaurantsDetail())
-  // const restaurantDetail = restaurant & restaurant.map((detail) => {
-  //   return <RestaurantCard
-  //key={detail.id}
-  //     src={detail.logoUrl}
-  //     name={detail.name}
-  //     category={detail.category}
-  //     deliveryTime={detail.deliveryTime}
-  //     shipping={detail.shipping}
-  //     address={detail.address}
-  //   />
-  // })
-  //  const productsDetail = restaurant & restaurant.map((product)=>{
-  //    return <MenuCard 
-  //    key={product.id}
-  //    category={product.category}
-  //    name={product.name}
-  //    src={product.photoUrl}
-  //    price={product.price}
-  //    descripton={product.description}
+  console.log(getRestaurantsDetail())
+  
+  const restaurantDetail = restaurant & restaurant.map((detail) => {
+    return <RestaurantCard
+      key={detail.id}
+      src={detail.logoUrl}
+      name={detail.name}
+      category={detail.category}
+      deliveryTime={detail.deliveryTime}
+      shipping={detail.shipping}
+      address={detail.address}
+    />
+  })
 
-  //    />
-  //  })
+  const productsDetail = restaurant & restaurant.map((product)=>{
+     return <MenuCard 
+     key={product.id}
+     category={product.category}
+     name={product.name}
+     src={product.photoUrl}
+     price={product.price}
+     descripton={product.description}
+
+     />
+  })
 
 
   return (
     <RestaurantsContainer>
-      <Header title={'Restaurantes'} />
-
+      <Header title={'Restaurante'} />
+      {restaurantDetail}
+      {productsDetail}
     </RestaurantsContainer>
   )
 }
