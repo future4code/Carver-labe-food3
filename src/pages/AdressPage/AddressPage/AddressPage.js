@@ -9,7 +9,7 @@ export default function AddressPage(props) {
     <ScreenContainer>
           Endereço
       <AdressForm/>
-      </ScreenContainer>
-      </RetangleContainer>
+    </ScreenContainer>
+    </RetangleContainer>
   );
 };
